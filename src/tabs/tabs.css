@@ -1,0 +1,57 @@
+.tab-container {
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.tab-container > * {
+    padding: 10px;
+    flex: 1 100%;
+    background: #f5f5f5;
+}
+
+.tab-navigate {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: .4rem;
+    bottom: .4rem;
+    padding: 0.8rem;
+    min-width:1.6%;
+    max-width:1.4rem;
+    opacity: 0;
+    color: #fff;
+    background-color: #747a7e;
+    cursor: pointer;
+    border-radius: .3rem;
+    transition: opacity .3s;
+    pointer-events: none;
+}
+
+.navigate-left {
+    left:0.8%;
+}
+
+.navigate-right {
+    right:0.8%;
+}
+
+.header-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-left:hover .navigate-left {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-right:hover .navigate-right {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.loading-icon {
+    background: #fff !important;
+}

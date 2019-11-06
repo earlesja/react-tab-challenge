@@ -36,6 +36,21 @@ export const TabData = {
             "id": 5,
             "title": "title5",
             "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis.",
+        },
+        {
+            "id": 6,
+            "title": "title6",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis.",
+        },
+        {
+            "id": 7,
+            "title": "title7",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis.",
+        },
+        {
+            "id": 8,
+            "title": "title8",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, dictum et porttitor quis.",
         }
     ]
 };
