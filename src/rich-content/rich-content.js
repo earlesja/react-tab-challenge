@@ -6,11 +6,12 @@ import './rich-content.css'
 
 export const RichContent = (props) => {
     if (props.content.type === 'img') {
-        return <img className="content-image" src={props.content.src} alt="Additional Content" />
+        return <img className="rich-content" src={props.content.src} alt="Additional Content" />
     } else if (props.content.type === 'youtube') {
-        return ( <YouTube className="content-image" videoId={props.content.src} /> );
+        return ( <YouTube className="rich-content" videoId={props.content.src} /> );
+    } else if (props.content.src) {
+        return <div className="rich-content">{props.content.src}</div>
     }
-    return null;
 };
 
 RichContent.propTypes = {
