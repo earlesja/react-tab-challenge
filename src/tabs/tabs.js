@@ -25,7 +25,7 @@ export class Tabs extends Component {
         };
     }
 
-    componentDidMount(): void {
+    componentDidMount() {
         fetch('http://my-json-server.typicode.com/earlesja/fake-json-server/content')
             .then(response => response.json())
             .then(data => this.setState({tabs: data}));
@@ -33,7 +33,7 @@ export class Tabs extends Component {
         this.tabListElem.addEventListener("keydown", this.handleKeyDown);
     }
 
-    componentWillUnmount(): void {
+    componentWillUnmount() {
         this.tabListElem.removeEventListener("keydown", this.handleKeyDown);
     }
 
@@ -79,10 +79,12 @@ export class Tabs extends Component {
             showNavLeft = true;
         }
 
-        this.setState({
-            isNavigateLeftHover: showNavLeft,
-            isNavigateRightHover: showNavRight
-        });
+        if (this.state.isNavigateLeftHover !== showNavLeft || this.state.isNavigateRightHover !== showNavRight) {
+            this.setState({
+                isNavigateLeftHover: showNavLeft,
+                isNavigateRightHover: showNavRight
+            });
+        }
     };
 
     shiftTabListLeft = () => {
@@ -129,9 +131,8 @@ export class Tabs extends Component {
     render() {
         return (
             <div className="tab-wrap">
-                <div className={"header-wrap" + this.getHeaderHoverClass()}
-                     onMouseEnter={this.handleNavigationControls}
-                     onMouseLeave={this.handleNavigationControls}>
+                <div className={`header-wrap ${this.getHeaderHoverClass()}`}
+                     onMouseOver={this.handleNavigationControls}>
                     <div className="navigation-controls">
                         <div onClick={this.shiftTabListLeft} className="tab-navigate navigate-left"><i className="fa fa-chevron-circle-left"/></div>
                         <div onClick={this.shiftTabListRight} className="tab-navigate navigate-right"><i className="fa fa-chevron-circle-right"/></div>
