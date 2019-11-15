@@ -16,7 +16,7 @@
 }
 
 .active-tab {
-    background: #fff;
+    background: #fff !important;
     border-bottom: none;
     color: #747a7e;
 }

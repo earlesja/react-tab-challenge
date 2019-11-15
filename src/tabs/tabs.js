@@ -23,6 +23,8 @@ export class Tabs extends Component {
             isNavigateRightHover: false,
             tabs: null
         };
+        this.refCallback = this.refCallback.bind(this);
+        this.tabHeaders = [];
     }
 
     componentDidMount() {
@@ -59,6 +61,7 @@ export class Tabs extends Component {
         this.setState({
             selectedTabIndex: newIndex
         });
+        this.tabHeaders[newIndex].focus();
     };
 
     handleWrapAround = (newIndex) => {
@@ -128,6 +131,10 @@ export class Tabs extends Component {
         return hoverClass;
     };
 
+    refCallback(ref) {
+        this.tabHeaders.push(ref);
+    }
+
     render() {
         return (
             <div className="tab-wrap">
@@ -142,9 +149,11 @@ export class Tabs extends Component {
                          role="tablist"
                          ref={tabList => this.tabListElem = tabList}>
                         {this.state.tabs ? this.state.tabs.map((tab, idx) => {
-                            return <TabHeader key={tab.id}
+                            return <TabHeader refCallback={this.refCallback}
+                                              key={tab.id}
                                               onSelect={this.handleTabSelection}
                                               title={tab.title}
+                                              classList={["class1", "class2"]}
                                               tabIndex={idx === this.state.selectedTabIndex ? 0 : -1}
                                               index={idx} />
                         }) : <div className="loading-icon"><i className="fa-3x fa fa-spinner fa-pulse"/></div>}

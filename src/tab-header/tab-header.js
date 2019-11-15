@@ -4,23 +4,28 @@ import 'typeface-merriweather';
 
 import './tab-header.css';
 
-export const TabHeader = (props) => {
+export const TabHeader = ({tabIndex, onSelect, index, title, classList=[], refCallback}) => {
     const getHeaderClass = () => {
-        let headerClass = "tab-header-container";
-        if (props.tabIndex === 0) {
-            headerClass += " active-tab";
+        const baseClass = ["tab-header-container"];
+        const activeClass = getActiveStatus();
+        return baseClass.concat(activeClass).concat(classList).join(' ');
+    };
+
+    const getActiveStatus = () => {
+        if (tabIndex === 0) {
+            return ["active-tab"];
         }
-        return headerClass;
     };
 
     return (
-        <button className={getHeaderClass()}
+        <button ref={refCallback}
+                className={getHeaderClass()}
                 role="tab"
-                aria-selected={props.tabIndex === 0}
-                tabIndex={props.tabIndex}
-                onClick={props.onSelect.bind(this, props.index)}>
+                aria-selected={tabIndex === 0}
+                tabIndex={tabIndex}
+                onClick={onSelect.bind(this, index)}>
             <span className="tab-header">
-                {props.title}
+                {title}
             </span>
         </button>
     )
