@@ -27,4 +27,16 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
+## Manual Deployment (Deprecated)
+<details>
+<summary>If Clio is inaccessible, this method of deployment is still viable.</summary>
+To deploy to production, run the following:
+
+```shell
+$ yarn deploy_
+```
+
+where `{env}` is the environment you want to deploy to.
+</details>
+
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
